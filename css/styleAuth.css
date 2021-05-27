@@ -1,0 +1,20 @@
+#form{
+    background-image: url('../img/font2.jfif');
+}
+.row{
+    background-image: url('../img/font.jfif');
+}
+body{
+    background-image: url('../img/font.jfif');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+a{
+text-decoration:none;
+}
+.box-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}

@@ -1,0 +1,401 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Accueil</title>
+  <style>
+      .nav-item a:hover{
+        color: red;
+        transform: scale(1.1);
+      }
+  </style>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+  <!-- Theme style -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.0.5/css/adminlte.min.css" />
+
+  <!--    Boostrap-->
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <!--    CSS datatables-->
+      <link rel="stylesheet" href="./Datatables/datatables.css">
+  <!--    Fontawesome-->
+      <link rel="stylesheet" href="./font/css/all.css">
+  <!--    Jquery-->
+      <script src="./jquery/jquery-3.6.0.min.js"></script>
+      <!--    JS Boostrap-->
+      <script src="./js/bootstrap.js"></script>
+  <!--    JS Datatables-->
+      <script src="./Datatables/datatables.js"></script>
+  </head>
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">      
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="#" class="nav-link">Company</a>
+      </li>
+
+      <li class="nav-item d-none d-md-inline-block">
+        <a class="nav-link flex-row float-end" href="#" onclick="event.preventDefault(); this.previousElementSibling.submit();">
+            <i class="nav-icon fas fa-user"></i>
+            Connecté en tant que adminintrateur
+        </a>
+      </li>
+
+      <li class="nav-item d-none d-md-inline-block">
+        <form action="authentification.html" method="POST" hidden>
+          <input type="hidden" name="_token" value="7SdWM6caTw44wjvVeik2kVcBCgwzDkDaVoX9mDeH">                                
+        </form>
+        <a class="nav-link flex-row float-end" href="#" onclick="event.preventDefault(); this.previousElementSibling.submit();">
+            Déconnexion
+        </a>
+      </li>
+    </ul>
+
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Sidebar -->
+    <div class="sidebar">
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+
+            <li class="nav-item">
+                <a href="" class="nav-link active" onclick="show('page_accueil');" id="accueil">
+                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                    <p>Accueil</p>
+                </a>
+            </li>
+
+            <li class="nav-item has-treeview ">
+                <a href="#" class="nav-link " >
+                    <i class="nav-icon fas fa-address-card"></i>
+                    <p>Gestion des articles
+                        <i class="right fas fa-angle-double-down"></i>
+                    </p>
+                </a>
+            </li>
+
+            <li class="nav-item has-treeview ">
+                <a href="#" class="nav-link " onclick="show('gestion_ventes');" id="ventes">
+                    <i class="nav-icon fas fa-cart-plus"></i>
+                    <p>
+                        Gestion des ventes
+                        <i class="right fas fa-angle-double-down"></i>
+                    </p>
+                </a>
+            </li>
+
+            <li class="nav-item has-treeview ">
+                    <a href="#" class="nav-link ">
+                    <i class="nav-icon fas fa-comment"></i>
+                    <p>
+                        Gestion des achats                                  
+                        <i class="right fas fa-angle-double-down"></i>
+                    </p>
+                 </a>
+            </li>
+
+            <li class="nav-item has-treeview ">
+                <a href="#" class="nav-link ">
+                    <i class="nav-icon fas fa-envelope"></i>
+                    <p>
+                        Gestion de la clientele                           
+                        <i class="right fas fa-angle-double-down"></i>
+                    </p>
+                </a>
+            </li>
+
+            <li class="nav-item has-treeview ">
+                    <a href="#" class="nav-link ">
+                        <i class="nav-icon fas fa-share-alt"></i>
+                        <p>
+                            Faire un inventaire
+                            <i class="right fas fa-angle-double-down"></i>
+                        </p>
+                    </a>        
+            </li>
+
+            <li class="nav-item has-treeview ">
+                <a href="#" class="nav-link " onclick="show('depenses_recettes');" id="produits">
+                    <i class="nav-icon fas fa-file"></i>
+                    <p>Depenses et Recettes
+                        <i class="right fas fa-angle-double-left"></i>
+                    </p>
+                </a>
+
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link ">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Depenses</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link ">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Recettes</p>
+                        </a>
+                    </li>
+                </ul>                                                                                                                                               </ul>
+            </li>                               
+        
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <!-- Content Header (Page header) -->
+        <div class="content-header" style="display: block;" id="page_accueil">
+        <div class="container-fluid " style="display: flex; justify-content: center;align-items: center;height: 50vh;">
+            <div class="row mb-2">
+            <div class="col-sm-12" >
+                <h1 class="m-5 text-dark" style="font-size: 700%; font-weight: bold;">Bienvenue dans notre site</h1><hr>
+                <p>Vous pouvez passer des commandes gratuitement</p>
+                <div>
+                    <img src="./img/p2.jfif" alt="aa" style="width: 300px; height: 200px; object-fit: cover;">
+                    <img src="./img/p3.jfif" alt="aa" style="width: 300px; height: 200px; object-fit: cover;">
+                    <img src="./img/p4.jfif" alt="aa" style="width: 300px; height: 200px; object-fit: cover;">
+                    <img src="./img/p6.jfif" alt="aa" style="width: 300px; height: 200px; object-fit: cover;">
+                </div><br>
+                <div class=" mx-auto text-center w-25 h-25">
+                    <button type="submit" class="btn btn-outline-primary w-75 h-50" style="font-size: 200%; font-weight: bold;">Commencer</button>
+                </div>
+            </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+        </div>
+        <!-- /.content-header -->
+
+
+        <!-- Main content -->
+        <div class="content">
+            
+            
+            <div id="accueil" style="display: none;">
+                <div class="content-header">
+                    <div class="p-2">
+                        <i class="fa fa-bars"></i>
+                        <a href="dashboard.html" style="text-decoration: none;">Accueil > </a>
+                        <a href="#" style="text-decoration: none;">Vente > </a>
+                        <a href="#" style="text-decoration: none;color: black;">Nouvelle Commande </a>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                       
+                        <!-- commandes client -->
+            <div class="page" id="gestion_ventes" style="display: none;">
+                            <div class="p-2">
+                                <i class="fa fa-bars"></i>
+                                
+                                <a href="dashboard.html" style="text-decoration: none;">Accueil > </a>
+                                <a href="#" style="text-decoration: none;">Vente > </a>
+                                <a href="#" style="text-decoration: none;color: black;" class="">Nouvelle Commande </a>
+                            </div>
+                            <h4>Nouvelle commande</h4><hr>
+                        
+                            <div class="col-12">
+                                <button type="button" class="add-row btn btn-primary float-end">Ajouter un article</button>
+                            </div><br><br>
+                        
+                            <div class="table border border-secondary">
+                                <form id="article" onsubmit="return sendData();" method="POST">
+                                    
+                                        <input type="hidden" id="quantite" placeholder="quantite" class="form-control">
+                                        <input type="hidden" id="article" placeholder="article" class="form-control">
+                                
+                                        <input type="hidden" id="prixUnitaire" placeholder="prixUnitaire" class="form-control">
+                                
+                                        <input type="hidden" id="prixTotal" placeholder="prixTotal" class="form-control"><br>
+                                        <!-- <input type="button" class="add-row" value="Ajouter un article" style="float: right;"><br><br> -->
+                                    <!-- </form> -->
+                                    <div id="montableau">
+                                        <table>
+                                            <tbody>
+                                                <div  class="client" >
+                                                    <div class="head">
+                                                        <!-- le client -->
+                                                        <span id="txtHint" class="text-center"></span>
+                                                    
+                                                    <tr id="header">
+                                                        <td>
+                                                            
+                                                            <label for="client">Client</label>
+                                                            <select class="form-select" name="users" id="users"  onchange="showUser(this.value)">
+                                                                
+                                                                <option value="">Selectionner une personne</option>
+                                                                <option value="1">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                
+                                                            </select>
+                                                            
+                                                            
+                                                            
+                                                            
+                                                            <!-- <input type="text"  name="client" placeholder="Prenom et nom du client" class="form-control ml-5 "> -->
+                                                        </td>
+                                                        <td>
+                                                            <div class="p-1">
+                                                                <label for="date">Date Livraison</label>
+                                                                <input type="date"  name="date" class="form-control ml-5">
+                                                            </div>
+                                                            
+                                                        </td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                        <td>
+                                                            <div class="p-1">
+                                                                <label for="montant">Montant Total Commande</label>
+                                                                <input type="text"  name="montant" id="montant" placeholder="Montant Total Commande" class="form-control ml-5">
+                                                            </div>
+                                                        </td>
+                                                        
+                                                        
+                                                    </tr>
+                                
+                                                    <tr id="header">
+                                                        <td>
+                                                            <div>
+                                                                <input type="radio" name="cpt" id="cpt" class="form-check-input">
+                                                                <label for="">Achat ou comptant</label> &nbsp;
+                                                                <input type="radio" name="cpt" id="cpt" class="form-check-input">
+                                                                <label for="">Achat à crédit</label>
+                                                        </div>
+                                                        </td>
+                                
+                                                        <td>
+                                                            <div>
+                                                                <label for="avance">Avance</label>
+                                                                <input type="text" value="" name="avance" placeholder="Avance" class="form-control">
+                                                            </div>
+                                                            
+                                                        </td>
+                                                        <td>
+                                                            <div>
+                                                                <label for="reste">Reste à payer</label>
+                                                                <input type="text" value="" name="reste" placeholder="Reste à payer" class="form-control">
+                                                            </div>
+                                                            
+                                                            
+                                                        </td>
+                                                        <td>
+                                                            <div class="p-5">
+                                                                <input type="button" value="Completer le reliquat" class="btn btn-primary">
+                                                            </div>
+                                                            
+                                                        </td>
+                                                        
+                                                        
+                                                    </tr>
+                                                </div>
+                                                </div><br>
+                                                
+                                                <!-- remplissage -->
+                                                <tr>
+                                              
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <div class="float-end mx-auto">
+                                            <button type="button" class="btn btn-danger " id="delete-row" style="background-color: red;">Supprimer</button>
+                                            <button type="submit" id="valider" name="submit_form"  class="btn btn-secondary  fa-save" style="background-color: rgb(0, 81, 255);">Valider</button>
+                                        </div>
+                                    </div>
+                            
+                                </form>
+                                <div id="res" ></div>
+                            </div>
+                            
+                            
+            </div>
+                        <!-- la liste des produits -->
+            <div class="col main" id="depenses_recettes" style="display: none;">
+                    <div class="content-header">
+                        <div class="p-2">
+                            <i class="fa fa-bars"></i>
+                            <a href="dashboard.html" style="text-decoration: none;">Accueil > </a>
+                            <a href="#" style="text-decoration: none;">Depenses et Recettes > </a>
+                            <a href="#" style="text-decoration: none;color: black;">Recettes </a>
+                        </div>
+                    </div>
+                <h4>Liste des produits</h4><hr>
+                <div class="row col-2">
+                    <button type="submit" class="btn btn-outline-primary float-end ">Ajouter un nouveau  <i class="fa fa-plus m-2"></i></button>
+                </div><br>
+               <table id="montableau" class="table table-striped">
+                   <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Age</th>
+                            <th scope="col">Nickname</th>
+                            <th scope="col">Employée</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                   </thead>
+                   <tbody id="body">
+							<!-- recuperation des valeurs dans la base de donnees -->
+                   </tbody>
+                   <tfoot>
+                        <tr>
+                            <td>101</td>
+                            <td>Colgate</td>
+                            <td>Pate dentifrice</td>
+                            <td>16</td>
+                            <td>Colgate</td>
+                            <td>oui</td>
+                            <td>  <a href="#"><i class="fa fa-edit m-2"></i></a>  <a href="#"><i class="fa fa-eye m-2"></i></a>   <a href="#"><i class="fa fa-trash-alt m-2"></i> </a></td>
+                        </tr>
+                   </tfoot>
+               </table>
+            </div>
+                <!--/fin de liste-->  
+            </div>      
+        </div><!-- /.container-fluid -->
+        </div><!-- /.content -->
+    </div><!-- /.content-wrapper -->
+
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <!-- Default to the left -->
+    <strong>Copyright &copy; 2021 | Company@contact.sn | votre site de référence</strong>
+  </footer>
+</div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED SCRIPTS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.0.5/js/adminlte.min.js"></script>
+<!-- recuperation des donnees au niveau de la base de donnees -->
+<script src="javascript/recupDonnees.js"></script>
+<script>
+    $(document).ready( function () {
+    $('#montableau').DataTable();
+        } );
+</script>
+<!-- script commandes -->
+<script src="javascript/commandes.js"></script>
+<!-- Pagination des pages -->
+<script src="javascript/pagination.js"></script>
+</body>
+</html>
