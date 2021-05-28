@@ -195,7 +195,7 @@
                 <div class="content-header">
                     <div class="p-2">
                         <i class="fa fa-bars"></i>
-                        <a href="dashboard.html" style="text-decoration: none;">Accueil > </a>
+                        <a href="index.html" style="text-decoration: none;">Accueil > </a>
                         <a href="#" style="text-decoration: none;">Vente > </a>
                         <a href="#" style="text-decoration: none;color: black;">Nouvelle Commande </a>
                     </div>
@@ -208,7 +208,7 @@
                             <div class="p-2">
                                 <i class="fa fa-bars"></i>
                                 
-                                <a href="dashboard.html" style="text-decoration: none;">Accueil > </a>
+                                <a href="index.html" style="text-decoration: none;">Accueil > </a>
                                 <a href="#" style="text-decoration: none;">Vente > </a>
                                 <a href="#" style="text-decoration: none;color: black;" class="">Nouvelle Commande </a>
                             </div>
@@ -219,7 +219,7 @@
                             </div><br><br>
                         
                             <div class="table border border-secondary">
-                                <form id="article" onsubmit="return sendData();" method="POST">
+                                <form id="article" method="POST" autocomplete="off" enctype="multipart/form-data" name="form">
                                     
                                         <input type="hidden" id="quantite" placeholder="quantite" class="form-control">
                                         <input type="hidden" id="article" placeholder="article" class="form-control">
@@ -318,7 +318,7 @@
                                         </table>
                                         <div class="float-end mx-auto">
                                             <button type="button" class="btn btn-danger " id="delete-row" style="background-color: red;">Supprimer</button>
-                                            <button type="submit" id="valider" name="submit_form"  class="btn btn-secondary  fa-save" style="background-color: rgb(0, 81, 255);">Valider</button>
+                                            <button type="submit" id="valider" name="submit"  class="btn btn-secondary  fa-save" style="background-color: rgb(0, 81, 255);">Valider</button>
                                         </div>
                                     </div>
                             
@@ -333,7 +333,7 @@
                     <div class="content-header">
                         <div class="p-2">
                             <i class="fa fa-bars"></i>
-                            <a href="dashboard.html" style="text-decoration: none;">Accueil > </a>
+                            <a href="index.html" style="text-decoration: none;">Accueil > </a>
                             <a href="#" style="text-decoration: none;">Depenses et Recettes > </a>
                             <a href="#" style="text-decoration: none;color: black;">Recettes </a>
                         </div>
@@ -397,5 +397,7 @@
 <script src="javascript/commandes.js"></script>
 <!-- Pagination des pages -->
 <script src="javascript/pagination.js"></script>
+<!-- insertion dans la base de donnees -->
+<script src="javascript/insertJS.js"></script>
 </body>
 </html>
